@@ -1,0 +1,37 @@
+a|b    :   khớp với a HOẶC b
+[0-9]  :   khớp với một trong số từ 0-9
+[a-z]  :   khớp với một chữ cái từ a-z
+[abc]  :   có thể khớp với a, b, hoặc c
+[^abc] :   khớp với bất kì ký tự nào TRỪ a,b và c
+------------------------------------------------------------------------------
+\d     :   Số bất kì (thay thế cho line 2)
+\D     :   Ký tự không phải là số                        <=> [^0-9]
+\s     :   Ký tự SPACE
+\S     :   Ký tự không phải SPACE                        <=> [^\s]
+\S+    :   Một số ký tự không phải khoảng trắng
+\w     :   Ký tự chữ                                     <=> [a-zA-Z0-9]
+\W     :   Ký tự không phải chữ                          <=> [^\w]
+\b     :   Ký tự thuộc a-z HOẶC A-Z HOẶC 0-9 HOẶC _      <=> [a-zA-Z0-9_]
+-----------------------------------------------------------------------------
+.      :   khớp với bất kì ký tự đơn nào ngoại trừ \
+^      :   bắt đầu của từ
+$      :   Kết thúc của từ
+/      :   Bắt đầu hoặc kết thúc chuỗi regex
+|      :   HOẶC
+\      :   Diễn tả 1 kí tự ngay sau nó từ ký tự đặc 
+       :   biệt thành ký tự thường và ngược lại
+-----------------------------------------------------------------------------
+*      :   Xuất hiện 0 hoặc nhiều lần                     <=> {0,}
++      :   Xuất hiện 1 hoặc nhiều lần                     <=> {1,}
+?      :   Xuất hiện 0 hoặc 1 lần                         <=> {0,1}
+{X}    :   Xuất hiện X lần                    
+{X,Y}  :   Xuất hiện trong khoảng X tới Y lần
+?      :   có nghĩa là xuất hiện 0 hoặc nhiều lần, 
+       :   thêm ? phía sau nghĩa là tìm kiếm khớp nhỏ nhất
+-----------------------------------------------------------------------------
+()     :   Khớp với một nhóm các kí tự đồng thời nhớ kết quả khớp || Ví dụ : (e|g)mail khớp email hoặc gmail
+(?:x)  :   Khớp với x nhưng không nhớ kết quả khớp                || Ví dụ : "a a" khớp với /(a)\1/, k khớp với /(?:a)\1/
+x(?=y) :   Chỉ khớp x nếu ngay sau x là y                         || Ví dụ : "hello" khớp với /h(?=e)/ nhưng return chỉ có h
+x(?!y) :   Chỉ khớp x nếu ngay sau x không phải là y              || Ví dụ : "hello" không khớp với /h(?!y)/
+
+REFERENCE: https://viblo.asia/p/regex-va-nhung-ung-dung-hay-ho-vyDZOXAPlwj
